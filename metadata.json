@@ -1,0 +1,6 @@
+{
+  "name": "CloudForge Nova Studio",
+  "description": "Multi-Agent AI Platform for Designing, Diagramming, and Generating Terraform IaC for Cloud Architectures (AWS, Azure, GCP)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
