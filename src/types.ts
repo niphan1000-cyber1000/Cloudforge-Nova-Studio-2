@@ -38,9 +38,26 @@ export interface DatabaseSchemaTable {
 }
 
 export interface PromptTemplate {
+  id: string;
   agentName: string;
-  role: string;
-  systemInstruction: string;
+  group: 'Intake' | 'Design' | 'Generation' | 'Review' | 'Support' | 'Orchestration' | 'Service';
+  status: 'Core' | 'Optional';
+  purpose: string;
+  responsibilities: string;
   inputFormat: string;
   outputFormat: string;
+  memory: string;
+  knowledge: string;
+  promptScope: string;
+  allowedTools: string;
+  notAllowed: string;
+  dependencies: string;
+  successCriteria: string;
+  stopCondition: string;
+  retryPolicy: string;
+  logging: string;
+  version: string;
+  owner: string;
+  priority: 'Critical' | 'High' | 'Medium' | 'Low';
+  systemInstruction?: string;
 }
