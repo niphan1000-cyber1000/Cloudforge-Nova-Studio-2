@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Cpu, Database, ShieldCheck, Server, Layers, ExternalLink, Menu, X } from 'lucide-react';
+import { Cpu, ShieldCheck, Server, Layers, ExternalLink, Menu, X } from 'lucide-react';
 import DashboardTab from './components/DashboardTab';
 import WorkspaceTab from './components/WorkspaceTab';
-import SpecsTab from './components/SpecsTab';
 import AuditTab from './components/AuditTab';
 
-type TabType = 'dashboard' | 'workspace' | 'specs' | 'audit';
+type TabType = 'dashboard' | 'workspace' | 'audit';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('dashboard');
@@ -27,7 +26,6 @@ export default function App() {
   const navItems = [
     { id: 'dashboard' as const, label: 'Overview Dashboard', icon: Layers },
     { id: 'workspace' as const, label: 'Orchestrator Workspace', icon: Cpu },
-    { id: 'specs' as const, label: 'Phase 2-3 Blueprints', icon: Database },
     { id: 'audit' as const, label: 'Audit Log & History', icon: ShieldCheck },
   ];
 
@@ -136,8 +134,6 @@ export default function App() {
             onExecutionCompleted={() => setRefreshTrigger((prev) => prev + 1)}
           />
         )}
-        
-        {activeTab === 'specs' && <SpecsTab />}
         
         {activeTab === 'audit' && <AuditTab key={refreshTrigger} />}
       </main>

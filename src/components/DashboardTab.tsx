@@ -3,7 +3,7 @@ import { Activity, Clock, ShieldCheck, Cpu, Code2, Server, Play, ArrowRight, Zap
 
 interface DashboardTabProps {
   onSelectPrompt: (prompt: string, cloud: 'AWS' | 'Azure' | 'GCP') => void;
-  onNavigate: (tab: 'workspace' | 'specs') => void;
+  onNavigate: (tab: 'workspace') => void;
 }
 
 export default function DashboardTab({ onSelectPrompt, onNavigate }: DashboardTabProps) {
@@ -89,12 +89,6 @@ export default function DashboardTab({ onSelectPrompt, onNavigate }: DashboardTa
               className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-900/30 active:scale-[0.98]"
             >
               <Cpu className="h-4 w-4" /> Start Architecting <ArrowRight className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => onNavigate('specs')}
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/50 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:bg-slate-900 hover:text-white"
-            >
-              <Database className="h-4 w-4" /> Review Phase 2-3 Specifications
             </button>
           </div>
         </div>
